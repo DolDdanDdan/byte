@@ -14,17 +14,33 @@ public class Move : MonoBehaviour
     void Update()
     {
         Playable _playable = GetComponent<Playable>();
+        Rush _rush = GetComponent<Rush>();
         Speed _speed = GetComponent<Speed>();
 
-        if (_rigid != null && _playable != null)
+        if (!_rigid)
         {
-            Vector2 moveVector = _playable.moveVector;
-
-            if (_speed != null)
-            {
-                moveVector *= _speed.speed;
-            }
-            _rigid.velocity = moveVector;
+            return;
         }
+
+        Vector2 moveVector = Vector2.zero;
+
+        if (_playable)
+        {
+            moveVector += _playable.moveVector;
+        } 
+        if (_rush)
+        {
+            Radar _radar = GetComponent<Radar>();
+
+            _rush.SetTarget(_radar.GetRadarObjects());
+
+            moveVector += _rush.moveVector;
+        }
+
+        if (_speed)
+        {
+            moveVector *= _speed.speed;
+        }
+        _rigid.velocity = moveVector;
     }
 }

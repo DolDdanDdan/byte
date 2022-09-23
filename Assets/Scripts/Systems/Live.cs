@@ -19,16 +19,4 @@ public class Live : MonoBehaviour
             gameObject.SetActive(false);
         }
     }
-
-    public void Damaged(float damage)
-    {
-        Health _health = GetComponent<Health>();
-        
-        if (_health == null)
-        {
-            return;
-        }
-
-        _health.health -= damage;
-    }
 }

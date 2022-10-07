@@ -14,7 +14,7 @@ public class Playable : MonoBehaviour
             Vector2 v = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
             if (v != Vector2.zero)
             {
-                lastMoveVector = v;
+                lastMoveVector = v.normalized;
             }
             return v.normalized;
         }

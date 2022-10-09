@@ -8,7 +8,7 @@ public class Live : MonoBehaviour
     {
         Health _health = GetComponent<Health>();
 
-        if (_health == null)
+        if (!_health)
         {
             return;
         }

@@ -236,6 +236,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 00688c566f1de5e479c2a00b362ec37f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  eye: {fileID: 1253810620}
 --- !u!114 &223882653
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -977,6 +978,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 00688c566f1de5e479c2a00b362ec37f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  eye: {fileID: 437694381}
 --- !u!58 &543765605
 CircleCollider2D:
   m_ObjectHideFlags: 0

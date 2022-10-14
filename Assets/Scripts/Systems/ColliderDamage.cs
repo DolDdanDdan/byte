@@ -14,10 +14,16 @@ public class ColliderDamage : MonoBehaviour
     void Update()
     {
         Power _power = GetComponent<Power>();
+        Team _team = GetComponent<Team>();
 
         if (_collision && _power)
         {
             List<GameObject> collisionObjects = _collision.GetCollisionObjects();
+
+            if (_team)
+            {
+                collisionObjects = _team.GetOtherTeamObjects(collisionObjects);
+            }
 
             foreach (GameObject collisionObject in collisionObjects)
             {

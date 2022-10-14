@@ -241,6 +241,7 @@ GameObject:
   - component: {fileID: 223882662}
   - component: {fileID: 223882661}
   - component: {fileID: 223882666}
+  - component: {fileID: 223882667}
   - component: {fileID: 223882653}
   - component: {fileID: 223882656}
   - component: {fileID: 223882660}
@@ -249,7 +250,7 @@ GameObject:
   - component: {fileID: 223882657}
   - component: {fileID: 223882665}
   - component: {fileID: 223882668}
-  - component: {fileID: 223882667}
+  - component: {fileID: 223882669}
   - component: {fileID: 223882664}
   m_Layer: 0
   m_Name: Player
@@ -561,6 +562,19 @@ MonoBehaviour:
   _spawnObjects:
   - {fileID: 8805616913585617264, guid: 8c9dd2ed8b227e14bace23ce5d9712c4, type: 3}
   _spawnTime: 1
+--- !u!114 &223882669
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 223882649}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2e6d6ace36f68044a994dabe55b2976c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _team: 1
 --- !u!1 &276446597
 GameObject:
   m_ObjectHideFlags: 0

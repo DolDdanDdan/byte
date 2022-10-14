@@ -424,6 +424,7 @@ GameObject:
   - component: {fileID: 8805616913585617224}
   - component: {fileID: 8805616913585617231}
   - component: {fileID: 8805616913585617230}
+  - component: {fileID: 8805616913585617216}
   - component: {fileID: 8805616913585617229}
   - component: {fileID: 8805616913585617228}
   - component: {fileID: 8805616913585617267}
@@ -431,7 +432,7 @@ GameObject:
   - component: {fileID: 8805616913585617222}
   - component: {fileID: 8805616913585617221}
   - component: {fileID: 8805616913585617223}
-  - component: {fileID: 8805616913585617216}
+  - component: {fileID: 5473190797128348892}
   - component: {fileID: 8805616913585617265}
   m_Layer: 0
   m_Name: Enemy
@@ -583,6 +584,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21a15d0fafdd09942ba00b575a7fa6ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &8805616913585617216
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8805616913585617264}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d88ff3d8364dc184eb0721280db6aa40, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  colors:
+  - {r: 1, g: 0.60754716, b: 0.60754716, a: 1}
+  - {r: 0.5886792, g: 0.6322309, b: 1, a: 1}
 --- !u!114 &8805616913585617229
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -671,7 +687,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc4f7bf1717c081408301857b3b12941, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &8805616913585617216
+--- !u!114 &5473190797128348892
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -680,12 +696,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 8805616913585617264}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d88ff3d8364dc184eb0721280db6aa40, type: 3}
+  m_Script: {fileID: 11500000, guid: 2e6d6ace36f68044a994dabe55b2976c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  colors:
-  - {r: 1, g: 0.60754716, b: 0.60754716, a: 1}
-  - {r: 0.5886792, g: 0.6322309, b: 1, a: 1}
+  _team: 2
 --- !u!58 &8805616913585617265
 CircleCollider2D:
   m_ObjectHideFlags: 0

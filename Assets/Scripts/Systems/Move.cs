@@ -32,10 +32,21 @@ public class Move : MonoBehaviour
         if (_rush)
         {
             Radar _radar = GetComponent<Radar>();
+            Team _team = GetComponent<Team>();
 
-            _rush.SetTarget(_radar.GetRadarObjects());
+            if (_radar)
+            {
+                List<GameObject> targets = _radar.GetRadarObjects();
 
-            moveVector += _rush.moveVector;
+                if (_team)
+                {
+                    targets = _team.GetOtherTeamObjects(targets);
+                }
+
+                _rush.SetTarget(targets);
+
+                moveVector += _rush.moveVector;
+            }
         }
 
         if (eye)

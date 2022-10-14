@@ -9,11 +9,6 @@ public class UseEnergy : MonoBehaviour
     void Start()
     {
         _energy = GetComponent<Energy>();
-
-        if (_energy)
-        {
-            _energy.energy = 0;
-        }
     }
 
     void Update()

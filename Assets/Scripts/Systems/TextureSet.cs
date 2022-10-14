@@ -4,15 +4,19 @@ using UnityEngine;
 
 public class TextureSet : MonoBehaviour
 {
-    [SerializeField] private List<Color> colors;
-    private SpriteRenderer spriteRenderer;
+    SpriteRenderer spriteRenderer;
 
     private void Start()
     {
+        RandomColor _random_color = GetComponent<RandomColor>();
+
         Random.InitState((int)System.DateTime.Now.Ticks);
 
-        spriteRenderer = GetComponent<SpriteRenderer>();
-        spriteRenderer.color = colors[Random.Range(0, colors.Count)];
+        if (_random_color)
+        {
+            spriteRenderer = GetComponent<SpriteRenderer>();
+            spriteRenderer.color = _random_color.colors[Random.Range(0, _random_color.colors.Count)];
+        }
     }
 
 }

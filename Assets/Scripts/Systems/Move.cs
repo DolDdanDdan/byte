@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Move : MonoBehaviour
 {
-    [SerializeField] private GameObject eye;
     Rigidbody2D _rigid = null;
 
     void Start()
@@ -17,6 +16,7 @@ public class Move : MonoBehaviour
         Playable _playable = GetComponent<Playable>();
         Rush _rush = GetComponent<Rush>();
         Speed _speed = GetComponent<Speed>();
+        Eye _eye = GetComponent<Eye>();
         
         if (!_rigid)
         {
@@ -29,6 +29,7 @@ public class Move : MonoBehaviour
         {
             moveVector += _playable.moveVector;
         } 
+
         if (_rush)
         {
             Radar _radar = GetComponent<Radar>();
@@ -49,19 +50,16 @@ public class Move : MonoBehaviour
             }
         }
 
-        if (eye)
+        if (_eye && _eye.eyeType == Eye.EyeType.Move)
         {
-            eye.transform.localPosition = Vector2.Lerp(
-                eye.transform.localPosition,
-                moveVector * 0.1f,
-                0.5f
-            );
+            _eye.Move(moveVector);
         }
 
         if (_speed)
         {
             moveVector *= _speed.speed;
         }
+
         _rigid.velocity = moveVector;
     }
 }

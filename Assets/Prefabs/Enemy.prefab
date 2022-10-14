@@ -421,6 +421,7 @@ GameObject:
   - component: {fileID: 8805616913585617227}
   - component: {fileID: 8805616913585617226}
   - component: {fileID: 8805616913585617225}
+  - component: {fileID: 8805616913585617265}
   - component: {fileID: 8805616913585617224}
   - component: {fileID: 8805616913585617231}
   - component: {fileID: 8805616913585617230}
@@ -431,9 +432,9 @@ GameObject:
   - component: {fileID: 8805616913585617266}
   - component: {fileID: 8805616913585617222}
   - component: {fileID: 8805616913585617221}
+  - component: {fileID: -1481359409575318649}
   - component: {fileID: 8805616913585617223}
   - component: {fileID: 5473190797128348892}
-  - component: {fileID: 8805616913585617265}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Enemy
@@ -546,7 +547,23 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.6
+  m_Radius: 0.4
+--- !u!58 &8805616913585617265
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8805616913585617264}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 10
 --- !u!114 &8805616913585617224
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -559,7 +576,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 00688c566f1de5e479c2a00b362ec37f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  eye: {fileID: 8805616914485125761}
 --- !u!114 &8805616913585617231
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -596,9 +612,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d88ff3d8364dc184eb0721280db6aa40, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  colors:
-  - {r: 1, g: 0.60754716, b: 0.60754716, a: 1}
-  - {r: 0.5886792, g: 0.6322309, b: 1, a: 1}
 --- !u!114 &8805616913585617229
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -637,7 +650,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30ea5176aaa9bff4f852891990520bf7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 10
+  maxHealth: 50
 --- !u!114 &8805616913585617266
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -675,6 +688,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bbb1a7603d088b147ab2eb8afeffcb5c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &-1481359409575318649
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8805616913585617264}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 225cefeb948631c46abc8709d62e7552, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _eye: {fileID: 8805616914485125761}
+  _eye_type: 0
 --- !u!114 &8805616913585617223
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -687,6 +714,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc4f7bf1717c081408301857b3b12941, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _colors:
+  - {r: 1, g: 0.57924527, b: 0.57924527, a: 1}
+  - {r: 0.53207546, g: 0.60590804, b: 1, a: 1}
+  - {r: 0.6121925, g: 1, b: 0.53333336, a: 1}
 --- !u!114 &5473190797128348892
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -700,22 +731,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _team: 2
---- !u!58 &8805616913585617265
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8805616913585617264}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 10
 --- !u!1 &8805616914485125761
 GameObject:
   m_ObjectHideFlags: 0

@@ -5,7 +5,15 @@ using UnityEngine;
 // Can be handling object's value
 public class Playable : MonoBehaviour
 {
-    public Vector2 lastMoveVector = Vector2.zero;
+    private Vector2 _lastMoveVector = Vector2.zero;
+
+    public Vector2 lastMoveVector
+    {
+        get
+        {
+            return _lastMoveVector;
+        }
+    }
     
     public Vector2 moveVector
     {
@@ -14,7 +22,7 @@ public class Playable : MonoBehaviour
             Vector2 v = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
             if (v != Vector2.zero)
             {
-                lastMoveVector = v.normalized;
+                _lastMoveVector = v.normalized;
             }
             return v.normalized;
         }

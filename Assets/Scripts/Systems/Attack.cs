@@ -6,15 +6,18 @@ public class Attack : MonoBehaviour
 {
     [SerializeField] private GameObject attack_object;
 
-    private SpriteRenderer attack_sprite_renderer;
-    private ColliderDamage attack_collider_damage_system;
+    SpriteRenderer attack_sprite_renderer;
+    Collider2D attack_collider2d;
+    // ColliderDamage attack_collider_damage_system;
 
     Animator attack_anime;
 
     void Start()
     {
-        attack_collider_damage_system = attack_object.AddComponent<ColliderDamage>();
-        attack_collider_damage_system.enabled = false;
+        attack_collider2d = attack_object.GetComponent<Collider2D>();
+        // attack_collider_damage_system =
+        attack_object.AddComponent<ColliderDamage>();
+        // attack_collider_damage_system.enabled = false;
 
         attack_sprite_renderer = attack_object.GetComponent<SpriteRenderer>();
         attack_anime = attack_object.GetComponent<Animator>();
@@ -42,6 +45,6 @@ public class Attack : MonoBehaviour
             }
         }
 
-        attack_collider_damage_system.enabled = attack_sprite_renderer.enabled;
+        attack_collider2d.enabled = attack_sprite_renderer.enabled;
     }
 }

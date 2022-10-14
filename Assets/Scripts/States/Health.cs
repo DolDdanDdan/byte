@@ -15,25 +15,13 @@ public class Health : MonoBehaviour
         }
     }
 
-    private float _health;
-    
-    public float health
-    {
-        get
-        {
-            return _health;
-        }
-        set
-        {
-            _health = value;
-        }
-    }
+    private float health;
     
     public float healthPercent
     {
         get
         {
-            return _health / maxHealth;
+            return health / maxHealth;
         }
     }
 

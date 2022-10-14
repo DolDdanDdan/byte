@@ -13,7 +13,7 @@ public class Live : MonoBehaviour
             return;
         }
 
-        if (_health.health <= 0)
+        if (_health.isDead)
         {
             // todo : death effect
             gameObject.SetActive(false);

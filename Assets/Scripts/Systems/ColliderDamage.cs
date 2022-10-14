@@ -17,7 +17,9 @@ public class ColliderDamage : MonoBehaviour
 
         if (_collision && _power)
         {
-            foreach (GameObject collisionObject in _collision.GetCollisionObjects())
+            List<GameObject> collisionObjects = _collision.GetCollisionObjects();
+
+            foreach (GameObject collisionObject in collisionObjects)
             {
                 Health _collision_health = collisionObject.GetComponent<Health>();
 
@@ -26,6 +28,11 @@ public class ColliderDamage : MonoBehaviour
                     _collision_health.Damaged(_power.damage);
                 }
             }
-        }   
+
+            if (collisionObjects.Count > 0 && _collision.isOnce)
+            {
+                _collision = null;
+            }
+        }
     }
 }

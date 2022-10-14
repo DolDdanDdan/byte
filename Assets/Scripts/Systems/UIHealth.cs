@@ -4,17 +4,14 @@ using UnityEngine;
 
 public class UIHealth : MonoBehaviour
 {
-    // todo 
+    [SerializeField] private Health _health;
+    [SerializeField] private HealthBar healthBar;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
     void Update()
     {
-        
+        if (_health && healthBar)
+        {
+            healthBar.SetValue(_health.healthPercent);
+        }
     }
 }

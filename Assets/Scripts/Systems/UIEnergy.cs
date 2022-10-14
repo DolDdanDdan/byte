@@ -5,22 +5,14 @@ using UnityEngine.UI;
 
 public class UIEnergy : MonoBehaviour
 {
-    private Text text;
-    private GameObject showObject;
-
-    void Start()
-    {
-        text = GetComponent<Text>();
-        showObject = GameObject.FindGameObjectWithTag("Player");
-    }
+    [SerializeField] private Text _text;
+    [SerializeField] private Energy _energy;
 
     void Update()
     {
-        Energy _energy = showObject.GetComponent<Energy>();
-
-        if (_energy)
+        if (_text && _energy)
         {
-            text.text = Mathf.FloorToInt(_energy.energy).ToString();
+            _text.text = Mathf.FloorToInt(_energy.energy).ToString();
         } 
     }
 }

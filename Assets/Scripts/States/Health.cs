@@ -5,7 +5,15 @@ using UnityEngine;
 public class Health : MonoBehaviour
 {
     [SerializeField] private float maxHealth = 10.0f;
-    private bool isDead = false;
+    private bool _isDead = false;
+
+    public bool isDead
+    {
+        get
+        {
+            return _isDead;
+        }
+    }
 
     private float _health;
     
@@ -20,11 +28,19 @@ public class Health : MonoBehaviour
             _health = value;
         }
     }
+    
+    public float healthPercent
+    {
+        get
+        {
+            return _health / maxHealth;
+        }
+    }
 
     void Awake()
     {
         health = maxHealth;
-        isDead = false;
+        _isDead = false;
     }
 
     public void Damaged(float damage)
@@ -32,7 +48,7 @@ public class Health : MonoBehaviour
         health -= damage;
         if (health <= 0)
         {
-            isDead = true;
+            _isDead = true;
         }
     }
 }

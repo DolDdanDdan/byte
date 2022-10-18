@@ -6,7 +6,8 @@ public class Eye : MonoBehaviour
 {
     public enum EyeType
     {
-        Move
+        Move,
+        Rotate
     }
 
     [SerializeField] private GameObject _eye;

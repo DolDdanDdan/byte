@@ -28,19 +28,21 @@ public class Playable : MonoBehaviour
         }
     }
 
-    // Object's Position is Vector2.zero
+    // Think of object's Position is Vector2.zero
     public Vector2 mousePosition
     {
         get
         {
-            Vector2 m = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            Vector2 m = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
             return m;
         }
     }
 
     public bool mouseClick
     {
-        get { return false; }
+        get { 
+            return Input.GetMouseButtonDown(0);
+        }
     }
 
     public bool spaceKey

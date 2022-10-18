@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Move : MonoBehaviour
 {
+    [SerializeField] private Radar _radar;
     Rigidbody2D _rigid = null;
 
     void Start()
@@ -14,14 +15,12 @@ public class Move : MonoBehaviour
     void Update()
     {
         Playable _playable = GetComponent<Playable>();
+
+        Following _following = GetComponent<Following>();
         Rush _rush = GetComponent<Rush>();
+
         Speed _speed = GetComponent<Speed>();
         Eye _eye = GetComponent<Eye>();
-        
-        if (!_rigid)
-        {
-            return;
-        }
 
         Vector2 moveVector = Vector2.zero;
 
@@ -30,9 +29,13 @@ public class Move : MonoBehaviour
             moveVector += _playable.moveVector;
         } 
 
+        if (_following)
+        {
+            moveVector += _following.moveVector;
+        }
+
         if (_rush)
         {
-            Radar _radar = GetComponent<Radar>();
             Team _team = GetComponent<Team>();
 
             if (_radar)
@@ -60,6 +63,13 @@ public class Move : MonoBehaviour
             moveVector *= _speed.speed;
         }
 
-        _rigid.velocity = moveVector;
+        if (_rigid)
+        {
+            _rigid.velocity = moveVector;
+        }
+        else
+        {
+            transform.position += (Vector3)moveVector;
+        }
     }
 }

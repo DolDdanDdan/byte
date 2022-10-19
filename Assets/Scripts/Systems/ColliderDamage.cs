@@ -10,8 +10,14 @@ public class ColliderDamage : MonoBehaviour
     {
         Power _power = GetComponent<Power>();
         Team _team = GetComponent<Team>();
+        OnceDamaged _once_damaged = GetComponent<OnceDamaged>();
 
-        if (_collision && _power)
+        if (_once_damaged && _once_damaged.isFinish)
+        {
+            return;
+        }
+
+        if (_collision)
         {
             List<GameObject> collisionObjects = _collision.GetCollisionObjects();
 
@@ -26,7 +32,19 @@ public class ColliderDamage : MonoBehaviour
 
                 if (_collision_health)
                 {
-                    _collision_health.Damaged(_power.damage);
+                    if (_power)
+                    {
+                        _collision_health.Damaged(_power.damage);
+                    }
+                    else
+                    {
+                        _collision_health.Damaged(1);
+                    }
+
+                    if (_once_damaged)
+                    {
+                        _once_damaged.damaged_finish();
+                    }
                 }
             }
         }

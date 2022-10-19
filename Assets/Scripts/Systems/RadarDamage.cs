@@ -17,7 +17,7 @@ public class RadarDamage : MonoBehaviour
             return;
         }
 
-        if (_radar && _power)
+        if (_radar)
         {
             List<GameObject> radarObjects = _radar.GetRadarObjects();
 
@@ -32,7 +32,14 @@ public class RadarDamage : MonoBehaviour
 
                 if (_radar_health)
                 {
-                    _radar_health.Damaged(_power.damage);
+                    if (_power)
+                    {
+                        _radar_health.Damaged(_power.damage);
+                    }
+                    else
+                    {
+                        _radar_health.Damaged(1);
+                    }
 
                     if (_once_damaged)
                     {

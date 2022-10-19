@@ -10,6 +10,12 @@ public class RadarDamage : MonoBehaviour
     {
         Power _power = GetComponent<Power>();
         Team _team = GetComponent<Team>();
+        OnceDamaged _once_damaged = GetComponent<OnceDamaged>();
+
+        if (_once_damaged && _once_damaged.isFinish)
+        {
+            return;
+        }
 
         if (_radar && _power)
         {
@@ -27,6 +33,11 @@ public class RadarDamage : MonoBehaviour
                 if (_radar_health)
                 {
                     _radar_health.Damaged(_power.damage);
+
+                    if (_once_damaged)
+                    {
+                        _once_damaged.damaged_finish();
+                    }
                 }
             }
         }

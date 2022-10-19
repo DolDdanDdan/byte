@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Health : MonoBehaviour
 {
-    [SerializeField] private float maxHealth = 10.0f;
+    [SerializeField] private float _maxHealth = 10.0f;
     private bool _isDead = false;
 
     public bool isDead
@@ -16,6 +16,14 @@ public class Health : MonoBehaviour
     }
 
     private float health;
+
+    public float maxHealth
+    {
+        get
+        {
+            return _maxHealth;
+        }
+    }
     
     public float healthPercent
     {

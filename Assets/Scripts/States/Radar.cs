@@ -18,7 +18,6 @@ public class Radar : MonoBehaviour
 
     public List<GameObject> GetRadarObjects()
     {
-
         return radarGameObjects;
     }
 }

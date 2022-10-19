@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Move : MonoBehaviour
 {
-    [SerializeField] private Radar _radar;
     Rigidbody2D _rigid = null;
 
     void Start()
@@ -16,7 +15,7 @@ public class Move : MonoBehaviour
     {
         Playable _playable = GetComponent<Playable>();
 
-        Following _following = GetComponent<Following>();
+        Target _target = GetComponent<Target>();
         Rush _rush = GetComponent<Rush>();
 
         Speed _speed = GetComponent<Speed>();
@@ -29,27 +28,23 @@ public class Move : MonoBehaviour
             moveVector += _playable.moveVector;
         } 
 
-        if (_following)
-        {
-            moveVector += _following.moveVector;
-        }
-
         if (_rush)
         {
-            Team _team = GetComponent<Team>();
-
-            if (_radar)
+            if (_target)
             {
-                List<GameObject> targets = _radar.GetRadarObjects();
-
-                if (_team)
+                if (_target.moveVector.magnitude > 1)
                 {
-                    targets = _team.GetOtherTeamObjects(targets);
+                    moveVector += _target.moveVector.normalized;
                 }
-
-                _rush.SetTarget(targets);
-
-                moveVector += _rush.moveVector;
+                else
+                {
+                    moveVector += _target.moveVector;
+                }
+            }
+            else
+            {
+                float angle = transform.eulerAngles.z * Mathf.PI / 180;
+                moveVector += new Vector2(Mathf.Cos(angle), Mathf.Sin(angle));
             }
         }
 
@@ -69,7 +64,8 @@ public class Move : MonoBehaviour
         }
         else
         {
-            transform.position += (Vector3)moveVector;
+            Debug.Log("not having rigidbody2d");
+            // transform.position += (Vector3) moveVector;
         }
     }
 }

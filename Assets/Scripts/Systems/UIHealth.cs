@@ -11,6 +11,15 @@ public class UIHealth : MonoBehaviour
     {
         if (_health && healthBar)
         {
+            // todo : if healthPercent is 100%, then hide health bar
+            /*
+            if (_health.healthPercent >= 1f)
+            {
+                gameObject.SetActive(false);
+                return;
+            }
+            gameObject.SetActive(true);
+            */
             healthBar.SetValue(_health.healthPercent);
         }
     }

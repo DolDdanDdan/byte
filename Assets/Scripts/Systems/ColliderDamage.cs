@@ -4,12 +4,7 @@ using UnityEngine;
 
 public class ColliderDamage : MonoBehaviour
 {
-    Collision _collision;
-
-    private void Start()
-    {
-        _collision = GetComponent<Collision>();
-    }
+    [SerializeField] private Collision _collision;
 
     void Update()
     {
@@ -33,11 +28,6 @@ public class ColliderDamage : MonoBehaviour
                 {
                     _collision_health.Damaged(_power.damage);
                 }
-            }
-
-            if (collisionObjects.Count > 0 && _collision.isOnce)
-            {
-                _collision = null;
             }
         }
     }

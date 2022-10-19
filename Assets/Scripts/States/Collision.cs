@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Collision : MonoBehaviour
 {
-    public bool isOnce;
     List<GameObject> collisionObjects = new List<GameObject>();
 
     private void OnCollisionEnter2D(Collision2D collision)

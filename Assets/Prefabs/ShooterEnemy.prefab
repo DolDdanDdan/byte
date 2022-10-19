@@ -12,6 +12,8 @@ GameObject:
   - component: {fileID: 2918264479016396549}
   - component: {fileID: 3915424379564617532}
   - component: {fileID: 2581751810719508552}
+  - component: {fileID: 2808216356111638364}
+  - component: {fileID: 4196855793069415979}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -101,6 +103,34 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &2808216356111638364
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1103934162423843619}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de1c1ee51844835458e408d01575f52b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _health: {fileID: 1173683780767623701}
+  healthBar: {fileID: 4196855793069415979}
+--- !u!114 &4196855793069415979
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1103934162423843619}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ddf0676aaed95e94c8248fceb6a393c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _healthBar: {fileID: 5783120592172054557}
+  slider: {fileID: 4364502986385174887}
 --- !u!1 &1173683780767623702
 GameObject:
   m_ObjectHideFlags: 0
@@ -113,7 +143,6 @@ GameObject:
   - component: {fileID: 1173683780767623725}
   - component: {fileID: 1173683780767623724}
   - component: {fileID: 1173683780767623727}
-  - component: {fileID: 1173683780767623726}
   - component: {fileID: 1173683780767623721}
   - component: {fileID: 1173683780767623720}
   - component: {fileID: 1173683780767623718}
@@ -121,7 +150,6 @@ GameObject:
   - component: {fileID: 1173683780767623690}
   - component: {fileID: 1173683780767623688}
   - component: {fileID: 1173683780767623693}
-  - component: {fileID: 1173683780767623723}
   - component: {fileID: 1173683780767623722}
   - component: {fileID: 1173683780767623701}
   - component: {fileID: 1173683780767623700}
@@ -216,7 +244,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1173683780767623702}
-  m_BodyType: 0
+  m_BodyType: 2
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -245,18 +273,6 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.6
---- !u!114 &1173683780767623726
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1173683780767623702}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 00688c566f1de5e479c2a00b362ec37f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1173683780767623721
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -346,19 +362,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e6a58dba5707e54e8334bdd02e0507c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1173683780767623723
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1173683780767623702}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c93bb013624789d479f59b0af64d447f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _speed: 3
 --- !u!114 &1173683780767623722
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -465,6 +468,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0360c7946d9d6114f9b1f4b0b12ab6b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _maxEnergy: 1
 --- !u!114 &1173683780767623689
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -788,8 +792,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4757107913512019326}
   - component: {fileID: 4364502986385174887}
-  - component: {fileID: 7415730281399962495}
-  - component: {fileID: 3154166899454630060}
   m_Layer: 5
   m_Name: HealthBar
   m_TagString: Untagged
@@ -870,33 +872,6 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &7415730281399962495
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5783120592172054557}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ddf0676aaed95e94c8248fceb6a393c2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  slider: {fileID: 4364502986385174887}
---- !u!114 &3154166899454630060
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5783120592172054557}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: de1c1ee51844835458e408d01575f52b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _health: {fileID: 1173683780767623701}
-  healthBar: {fileID: 7415730281399962495}
 --- !u!1 &6496855202226565512
 GameObject:
   m_ObjectHideFlags: 0

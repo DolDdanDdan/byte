@@ -4,7 +4,14 @@ using UnityEngine;
 
 public class OnceDamaged : MonoBehaviour
 {
-    [SerializeField] private bool isDead = false;
+    [SerializeField] private bool _isDead = false;
+    public bool isDead
+    {
+        get
+        {
+            return _isDead;
+        }
+    }
 
     private bool _isFinish = false;
 

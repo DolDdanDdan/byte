@@ -20,7 +20,9 @@ public class Live : MonoBehaviour
             _health.Damaged(_health.maxHealth * Time.deltaTime / _timelimit.time);
         }
 
-        if (_once_damaged && _once_damaged.isFinish)
+        if (_once_damaged 
+         && _once_damaged.isDead 
+         && _once_damaged.isFinish)
         {
             _health.Damaged(_health.maxHealth);
         }

@@ -29,7 +29,7 @@ public class Live : MonoBehaviour
 
         if (_health.isDead)
         {
-            // todo : death effect
+            // todo : death effect (fade out)
             gameObject.SetActive(false);
         }
     }

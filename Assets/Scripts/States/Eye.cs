@@ -12,6 +12,7 @@ public class Eye : MonoBehaviour
 
     [SerializeField] private GameObject _eye;
     [SerializeField] private EyeType _eye_type;
+    [SerializeField] private float _eye_distance;
 
     public EyeType eyeType
     {
@@ -25,7 +26,7 @@ public class Eye : MonoBehaviour
     {
         _eye.transform.localPosition = Vector2.Lerp(
             _eye.transform.localPosition,
-            position.normalized * 0.1f,
+            position.normalized * _eye_distance,
             0.5f
         );
     }

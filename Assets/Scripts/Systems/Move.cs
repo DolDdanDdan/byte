@@ -22,11 +22,12 @@ public class Move : MonoBehaviour
         Eye _eye = GetComponent<Eye>();
 
         Vector2 moveVector = Vector2.zero;
+        float angle = transform.eulerAngles.z * Mathf.PI / 180;
 
         if (_playable)
         {
             moveVector += _playable.moveVector;
-        } 
+        }
 
         if (_rush)
         {
@@ -43,7 +44,6 @@ public class Move : MonoBehaviour
             }
             else
             {
-                float angle = transform.eulerAngles.z * Mathf.PI / 180;
                 moveVector += new Vector2(Mathf.Cos(angle), Mathf.Sin(angle));
             }
         }

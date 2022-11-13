@@ -2,10 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Split : MonoBehaviour
+public class Split : _SkillState
 {
-    [SerializeField] private float _time;
     [SerializeField] private int _objectCount;
     [SerializeField] private int _remainCount;
-
 }

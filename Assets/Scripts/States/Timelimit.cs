@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Timelimit : MonoBehaviour
+public class Timelimit : _State
 {
     [SerializeField] private float _time;
 

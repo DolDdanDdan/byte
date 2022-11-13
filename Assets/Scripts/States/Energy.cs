@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Energy : MonoBehaviour
+public class Energy : _State
 {
     [SerializeField] private float _maxEnergy = 1f;
 

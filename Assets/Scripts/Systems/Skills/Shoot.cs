@@ -2,14 +2,27 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Shoot : MonoBehaviour
+public class Shoot : _SkillSystem
 {
+    Bullet _bullet;
+    Energy _energy;
+    Target _target;
+
+    void Start()
+    {
+        _bullet = GetComponent<Bullet>();
+        _energy = GetComponent<Energy>();
+        _target = GetComponent<Target>();
+    }
+
     void Update()
     {
-        Bullet _bullet = GetComponent<Bullet>();
-        Energy _energy = GetComponent<Energy>();
-        Target _target = GetComponent<Target>();
+        UpdateTime(_bullet);
+        detectKey(_bullet);
+    }
 
+    public override void useSkill()
+    {
         if (_bullet)
         {
             Quaternion rotation = transform.rotation;

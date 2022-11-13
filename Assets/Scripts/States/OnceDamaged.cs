@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class OnceDamaged : MonoBehaviour
+public class OnceDamaged : _State
 {
     [SerializeField] private bool _isDead = false;
     public bool isDead

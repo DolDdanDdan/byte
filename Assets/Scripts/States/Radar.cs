@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Radar : MonoBehaviour
+public class Radar : _State
 {
     private List<GameObject> radarGameObjects = new List<GameObject>();
 

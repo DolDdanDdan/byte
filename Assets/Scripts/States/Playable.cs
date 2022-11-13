@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 // Can be handling object's value
-public class Playable : MonoBehaviour
+public class Playable : _State
 {
     private Vector2 _lastMoveVector = Vector2.zero;
 
@@ -42,6 +42,38 @@ public class Playable : MonoBehaviour
     {
         get { 
             return Input.GetMouseButtonDown(0);
+        }
+    }
+
+    public bool mouseRightClick
+    {
+        get
+        {
+            return Input.GetMouseButtonDown(2);
+        }
+    }
+
+    public bool modeKey
+    {
+        get
+        {
+            return Input.GetKeyDown(KeyCode.Q);
+        }
+    }
+
+    public bool skillKey
+    {
+        get
+        {
+            return Input.GetKeyDown(KeyCode.E);
+        }
+    }
+
+    public bool skillChangeKey
+    {
+        get
+        {
+            return Input.GetKeyDown(KeyCode.R);
         }
     }
 

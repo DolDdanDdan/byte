@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Collision : MonoBehaviour
+public class Collision : _State
 {
     List<GameObject> collisionObjects = new List<GameObject>();
 

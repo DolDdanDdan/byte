@@ -150,6 +150,7 @@ GameObject:
   - component: {fileID: 1173683780767623690}
   - component: {fileID: 1173683780767623688}
   - component: {fileID: 1173683780767623693}
+  - component: {fileID: 4034987931434856132}
   - component: {fileID: 1173683780767623722}
   - component: {fileID: 1173683780767623701}
   - component: {fileID: 1173683780767623700}
@@ -362,6 +363,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e6a58dba5707e54e8334bdd02e0507c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &4034987931434856132
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1173683780767623702}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8907e31462a6217439bdd7ece9610449, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _skill_systems:
+  - {fileID: 0}
 --- !u!114 &1173683780767623722
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -482,8 +497,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0ae0ead9addb5049b1d2e74424bfb38, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _bullet: {fileID: 2227265850256619802, guid: 1837b91f36e916b4e885b9fc7a90f338, type: 3}
+  _need_time: 0
   _need_energy: 1
+  keyCode: 0
+  _bullet: {fileID: 2227265850256619802, guid: 1837b91f36e916b4e885b9fc7a90f338, type: 3}
   _need_target: 1
   _life_time: 3
 --- !u!1 &1173683780866879975

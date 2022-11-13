@@ -2,12 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Spawner : MonoBehaviour
+public class Spawner : _SkillState
 {
     [SerializeField] private List<GameObject> _spawnObjects;
-    [SerializeField] private float _spawnTime;
     [SerializeField] private float _lifeTime;
-    [SerializeField] private float _needEnergy;
     [SerializeField] private bool _needTarget;
 
     public List<GameObject> spawnObjects
@@ -22,7 +20,7 @@ public class Spawner : MonoBehaviour
     {
         get
         {
-            return _spawnTime;
+            return _need_time;
         }
     }
     public float lifeTime
@@ -37,7 +35,7 @@ public class Spawner : MonoBehaviour
     {
         get
         {
-            return _needEnergy;
+            return _need_energy;
         }
     }
 

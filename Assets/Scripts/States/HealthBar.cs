@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class HealthBar : MonoBehaviour
+public class HealthBar : _State
 {
     [SerializeField] private GameObject _healthBar;
     [SerializeField] private Slider slider;

@@ -2,10 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Bullet : MonoBehaviour
+public class Bullet : _SkillState
 {
     [SerializeField] private GameObject _bullet;
-    [SerializeField] private float _need_energy;
     [SerializeField] private bool _need_target;
     [SerializeField] private float _life_time;
 

@@ -2,28 +2,32 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SpawnOutside : MonoBehaviour
+public class SpawnOutside : _SkillSystem
 {
     [SerializeField] private float range;
-    float time;
-    Spawner spawner;
+    Spawner _spawner;
 
     void Start()
     {
-        spawner = GetComponent<Spawner>();
+        _spawner = GetComponent<Spawner>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (spawner)
+        UpdateTime(_spawner);
+        detectKey(_spawner);
+    }
+
+    public override void useSkill()
+    {
+        if (_spawner)
         {
-            time -= Time.deltaTime;
-            if (time > 0) return;
+            if (_spawner._time > 0) return;
 
-            time += spawner.spawnTime;
+            _spawner._time += _spawner._need_time;
 
-            List<GameObject> spawnObjects = spawner.spawnObjects;
+            List<GameObject> spawnObjects = _spawner.spawnObjects;
 
             foreach (GameObject spawnObject in spawnObjects)
             {

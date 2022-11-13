@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Health : MonoBehaviour
+public class Health : _State
 {
     [SerializeField] private float _maxHealth = 10.0f;
     private bool _isDead = false;

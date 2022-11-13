@@ -1536,7 +1536,11 @@ CanvasRenderer:
   m_GameObject: {fileID: 1628713331}
   m_CullTransparentMesh: 1
 <<<<<<< HEAD
+<<<<<<< HEAD
 --- !u!1 &2130172937
+=======
+--- !u!1 &1836197628
+>>>>>>> 0daafa3c18101fabb156784376b9a223b997f5cd
 =======
 --- !u!1 &1836197628
 >>>>>>> 0daafa3c18101fabb156784376b9a223b997f5cd
@@ -1548,15 +1552,21 @@ GameObject:
   serializedVersion: 6
   m_Component:
 <<<<<<< HEAD
+<<<<<<< HEAD
   - component: {fileID: 2130172938}
   - component: {fileID: 2130172939}
   m_Layer: 0
   m_Name: Big Eye-W
 =======
+=======
+>>>>>>> 0daafa3c18101fabb156784376b9a223b997f5cd
   - component: {fileID: 1836197629}
   - component: {fileID: 1836197630}
   m_Layer: 0
   m_Name: Eye W
+<<<<<<< HEAD
+>>>>>>> 0daafa3c18101fabb156784376b9a223b997f5cd
+=======
 >>>>>>> 0daafa3c18101fabb156784376b9a223b997f5cd
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1564,7 +1574,11 @@ GameObject:
   m_StaticEditorFlags: 0
   m_IsActive: 1
 <<<<<<< HEAD
+<<<<<<< HEAD
 --- !u!4 &2130172938
+=======
+--- !u!4 &1836197629
+>>>>>>> 0daafa3c18101fabb156784376b9a223b997f5cd
 =======
 --- !u!4 &1836197629
 >>>>>>> 0daafa3c18101fabb156784376b9a223b997f5cd
@@ -1574,7 +1588,11 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
 <<<<<<< HEAD
+<<<<<<< HEAD
   m_GameObject: {fileID: 2130172937}
+=======
+  m_GameObject: {fileID: 1836197628}
+>>>>>>> 0daafa3c18101fabb156784376b9a223b997f5cd
 =======
   m_GameObject: {fileID: 1836197628}
 >>>>>>> 0daafa3c18101fabb156784376b9a223b997f5cd
@@ -1583,18 +1601,24 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
 <<<<<<< HEAD
+<<<<<<< HEAD
   m_Children: []
   m_Father: {fileID: 2145393896}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &2130172939
 =======
+=======
+>>>>>>> 0daafa3c18101fabb156784376b9a223b997f5cd
   m_Children:
   - {fileID: 1253810621}
   m_Father: {fileID: 223882651}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1836197630
+<<<<<<< HEAD
+>>>>>>> 0daafa3c18101fabb156784376b9a223b997f5cd
+=======
 >>>>>>> 0daafa3c18101fabb156784376b9a223b997f5cd
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1602,7 +1626,11 @@ SpriteRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
 <<<<<<< HEAD
+<<<<<<< HEAD
   m_GameObject: {fileID: 2130172937}
+=======
+  m_GameObject: {fileID: 1836197628}
+>>>>>>> 0daafa3c18101fabb156784376b9a223b997f5cd
 =======
   m_GameObject: {fileID: 1836197628}
 >>>>>>> 0daafa3c18101fabb156784376b9a223b997f5cd
@@ -1640,8 +1668,13 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
 <<<<<<< HEAD
+<<<<<<< HEAD
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 13ac91e470fe5544aa0ac128490e1a78, type: 3}
+=======
+  m_SortingOrder: 1
+  m_Sprite: {fileID: 21300000, guid: ade4397e3c31b9145b15fe15ec16c2ba, type: 3}
+>>>>>>> 0daafa3c18101fabb156784376b9a223b997f5cd
 =======
   m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: ade4397e3c31b9145b15fe15ec16c2ba, type: 3}
@@ -1651,7 +1684,11 @@ SpriteRenderer:
   m_FlipY: 0
   m_DrawMode: 0
 <<<<<<< HEAD
+<<<<<<< HEAD
   m_Size: {x: 0.09, y: 0.09}
+=======
+  m_Size: {x: 1.2, y: 1.2}
+>>>>>>> 0daafa3c18101fabb156784376b9a223b997f5cd
 =======
   m_Size: {x: 1.2, y: 1.2}
 >>>>>>> 0daafa3c18101fabb156784376b9a223b997f5cd
@@ -1660,6 +1697,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+<<<<<<< HEAD
 <<<<<<< HEAD
 --- !u!1 &2145393894
 GameObject:
@@ -1837,5 +1875,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24f4cc204e5276240bae4482d0457af7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+=======
+>>>>>>> 0daafa3c18101fabb156784376b9a223b997f5cd
 =======
 >>>>>>> 0daafa3c18101fabb156784376b9a223b997f5cd

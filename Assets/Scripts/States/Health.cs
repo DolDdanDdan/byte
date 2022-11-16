@@ -15,7 +15,15 @@ public class Health : _State
         }
     }
 
-    private float health;
+    private float _health;
+
+    public float health
+    {
+        get
+        {
+            return _health;
+        }
+    }
 
     public float maxHealth
     {
@@ -35,13 +43,13 @@ public class Health : _State
 
     void Awake()
     {
-        health = maxHealth;
+        _health = maxHealth;
         _isDead = false;
     }
 
     public void Damaged(float damage)
     {
-        health -= damage;
+        _health -= damage;
         if (health <= 0)
         {
             _isDead = true;

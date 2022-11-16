@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class UIEnergy : MonoBehaviour
+public class UIEnergy : _System
 {
     [SerializeField] private Text _text;
     [SerializeField] private Energy _energy;

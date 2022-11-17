@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Move : MonoBehaviour
+public class Move : _System
 {
     Rigidbody2D _rigid = null;
 
@@ -17,6 +17,8 @@ public class Move : MonoBehaviour
 
         Target _target = GetComponent<Target>();
         Rush _rush = GetComponent<Rush>();
+
+        Dash _dash = GetComponent<Dash>();
 
         Speed _speed = GetComponent<Speed>();
         Eye _eye = GetComponent<Eye>();
@@ -33,7 +35,7 @@ public class Move : MonoBehaviour
         {
             if (_target)
             {
-                if (_target.moveVector.magnitude > 1)
+                if (_target.moveVector.magnitude > 1f)
                 {
                     moveVector += _target.moveVector.normalized;
                 }
@@ -56,6 +58,12 @@ public class Move : MonoBehaviour
         if (_speed)
         {
             moveVector *= _speed.speed;
+        }
+
+        if (_dash)
+        {
+            moveVector += _dash._dash_rotate;
+            _dash._dash_rotate *= 0.97f;
         }
 
         if (_rigid)

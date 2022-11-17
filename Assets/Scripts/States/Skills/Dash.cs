@@ -5,4 +5,6 @@ using UnityEngine;
 public class Dash : _SkillState
 {
     public float _speed;
+
+    [System.NonSerialized] public Vector2 _dash_rotate;
 }

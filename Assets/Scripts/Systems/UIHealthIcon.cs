@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class UIHealthIcon : _System
 {
+    [SerializeField] private GameObject verticalObject;
     [SerializeField] private GameObject horizontalObject;
 
     [SerializeField] private Health _health;
@@ -13,18 +14,24 @@ public class UIHealthIcon : _System
 
     void Update()
     {
-        if (!_health || !horizontalObject)
+        int health = 0;
+
+        if (_health)
+        {
+            health = (int)_health.health;
+        }
+
+        if (!horizontalObject || !verticalObject)
         {
             return;
         }
 
-        int health = (int)_health.health;
 
         for (int index = 0; health > 0 || index < healthLines.Count; index++)
         {
             if (healthLines.Count <= index)
             {
-                healthLines.Insert(0, Instantiate(horizontalObject, transform));
+                healthLines.Insert(0, Instantiate(horizontalObject, verticalObject.transform));
             }
 
             healthLines[index].GetComponent<UIIcons>().count = Mathf.Min(health, 10);

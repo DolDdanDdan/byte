@@ -9,10 +9,7 @@ public class Dashed : _SkillSystem
     void Start()
     {
         _dash = GetComponent<Dash>();
-    }
-
-    private void Update()
-    {
+        _skill_state = _dash;
     }
 
     public override void useSkill()

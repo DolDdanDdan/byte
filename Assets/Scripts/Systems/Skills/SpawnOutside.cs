@@ -10,34 +10,24 @@ public class SpawnOutside : _SkillSystem
     void Start()
     {
         _spawner = GetComponent<Spawner>();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        UpdateTime(_spawner);
-        detectKey(_spawner);
+        _skill_state = _spawner;
     }
 
     public override void useSkill()
     {
-        if (_spawner)
+        if (!isSkillEnable()) return;
+        useCost();
+
+        List<GameObject> spawnObjects = _spawner.spawnObjects;
+
+        foreach (GameObject spawnObject in spawnObjects)
         {
-            if (_spawner._time > 0) return;
+            float rotation = Random.Range(-Mathf.PI, Mathf.PI);
 
-            _spawner._time += _spawner._need_time;
+            Vector2 spawnPoint = transform.position;
+            spawnPoint += new Vector2(Mathf.Cos(rotation), Mathf.Sin(rotation)) * range;
 
-            List<GameObject> spawnObjects = _spawner.spawnObjects;
-
-            foreach (GameObject spawnObject in spawnObjects)
-            {
-                float rotation = Random.Range(-Mathf.PI, Mathf.PI);
-
-                Vector2 spawnPoint = transform.position;
-                spawnPoint += new Vector2(Mathf.Cos(rotation), Mathf.Sin(rotation)) * range;
-
-                Instantiate(spawnObject, spawnPoint, Quaternion.identity);
-            }
+            Instantiate(spawnObject, spawnPoint, Quaternion.identity);
         }
     }
 }
